@@ -1,0 +1,44 @@
+<!-- templates/article_detail.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="card-body">
+  <h2><span>{{ object.name }}</span></a></h2>
+  <h5><span>{{ object.created_date}}</span></a></h5>
+ <p><span>{{ object.description }}</span> </p>
+    <div class="icon">
+      <p class="download"><span class="material-symbols-outlined">download</span>0</p>
+      <p class="like"><span class="material-symbols-outlined">{{Authwiki.upvote}}thumb_up</span>0</p>
+      <p class="dislike"><span class="material-symbols-outlined">thumb_down</span>0</p>
+    </div>
+  </ul>
+
+<p><a href="{% url 'authwiki_edit' object.id %}">Edit</a> |<a href="{% url 'authwiki_delete' object.id %}">Delete</a></p>
+<p>Back to <a href="{% url 'authwiki_list' %}">All Articles</a>.</p>
+
+{% endblock content %}
+
+
+<!--
+<div class="card-footer text-center text-muted">
+    <a href="{% url 'authwiki_edit' authwiki.pk %}">Edit</a> |
+    <a href="{% url 'authwiki_delete' authwiki.pk %}">Delete</a>
+</div>
+<div class="card-body">
+    <ul>
+
+    <li><h5><a href="authwiki2"><span>{{ Authwiki.name }}</span></a></h5></li>
+    <li><p><span>{{ Authwiki.description }}</span> ............<a href="authwiki_detail">read more</a></p></li>
+      <div class="icon">
+        <p class="download"><span class="material-symbols-outlined">download</span>0</p>
+        <p class="like"><span class="material-symbols-outlined">{{Authwiki.upvote}}thumb_up</span>0</p>
+        <p class="dislike"><span class="material-symbols-outlined">thumb_down</span>0</p>
+      </div>
+    </ul>
+ <span class="text-muted" style="text-align: center;">by {{ Authwiki.author }} |{{ Authwiki.created_date }}</span>
+  <div class="card"><span>{{ Authwiki.body }}</span> &middot;</div>
+
+  <!-- </div> -->
+  </div>
+  
+-->
